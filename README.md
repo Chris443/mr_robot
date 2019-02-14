@@ -1,0 +1,1 @@
+Just a small Project using pure C++ and QT

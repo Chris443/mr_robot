@@ -1,0 +1,7 @@
+*.opendb
+.vs/
+*.suo
+*.user
+*.ncb
+Debug/
+Release/
