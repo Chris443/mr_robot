@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Patchbot\gui\GameController.cpp" />
     <ClCompile Include="Patchbot\Application\Application.cpp" />
     <ClCompile Include="Patchbot\gui\Patchbot.cpp" />
     <ClCompile Include="Patchbot\Resources\Map.cpp" />
@@ -18,9 +19,12 @@
     <ClCompile Include="Patchbot\Resources\TGA_Image.cpp" />
     <ClCompile Include="Patchbot\util\Exception.cpp" />
     <ClCompile Include="Patchbot\util\Log.cpp" />
+    <ClCompile Include="Patchbot\gui\RenderWidget.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Patchbot\gui\RenderWidget.h" />
     <QtMoc Include="Patchbot\gui\Patchbot.h" />
+    <ClInclude Include="Patchbot\gui\GameController.h" />
     <ClInclude Include="Patchbot\Resources\Map.h" />
     <ClInclude Include="Patchbot\Resources\MapData.h" />
     <ClInclude Include="Patchbot\Resources\MapLoader.h" />
@@ -96,16 +100,19 @@
     <QtMoc>
       <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
-      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
       <Define>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</Define>
+      <QTDIR>$(QTDIR)</QTDIR>
     </QtMoc>
     <QtUic>
       <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
       <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+      <QTDIR>$(QTDIR)</QTDIR>
     </QtUic>
     <QtRcc>
       <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
       <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+      <QTDIR>$(QTDIR)</QTDIR>
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -127,16 +134,19 @@
     <QtMoc>
       <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
-      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
       <Define>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</Define>
+      <QTDIR>$(QTDIR)</QTDIR>
     </QtMoc>
     <QtUic>
       <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
       <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+      <QTDIR>$(QTDIR)</QTDIR>
     </QtUic>
     <QtRcc>
       <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
       <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+      <QTDIR>$(QTDIR)</QTDIR>
     </QtRcc>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

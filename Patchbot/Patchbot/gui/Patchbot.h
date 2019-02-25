@@ -3,7 +3,7 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_Patchbot.h"
 
-class Patchbot : public QMainWindow
+class Patchbot : public QMainWindow 
 {
 	Q_OBJECT
 
@@ -12,4 +12,24 @@ public:
 
 private:
 	Ui::PatchbotClass ui;
+
+	void resizeEvent(QResizeEvent* event);
+private slots:
+	//Colony Slots
+	void change_Colony();
+	//Programming Slots
+	void left_Arrow_clicked();
+	void right_Arrow_clicked();
+	void down_Arrow_clicked();
+	void up_Arrow_clicked();
+	void wait_Arrow_clicked();
+	void return_Arrow_clicked();
+	void dropdown();
+	void textfield();
+	//Programming Slots
+	void mission_start();
+	void cancel();
+	void single_step();
+	void automate();
+	void stop();
 };

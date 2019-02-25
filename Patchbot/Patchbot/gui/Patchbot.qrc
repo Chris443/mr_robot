@@ -1,4 +1,10 @@
 <RCC>
-    <qresource prefix="Patchbot">
+    <qresource prefix="/Patchbot">
+        <file>pfeile/backArrow.tga</file>
+        <file>pfeile/pfeil_links.tga</file>
+        <file>pfeile/pfeil_oben.tga</file>
+        <file>pfeile/pfeil_rechts.tga</file>
+        <file>pfeile/pfeil_unten.tga</file>
+        <file>pfeile/waitCircle.tga</file>
     </qresource>
 </RCC>

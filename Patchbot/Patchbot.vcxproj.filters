@@ -51,6 +51,12 @@
     <ClCompile Include="Patchbot\gui\Patchbot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Patchbot\gui\RenderWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Patchbot\gui\GameController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Patchbot\Resources\Map.h">
@@ -69,6 +75,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Patchbot\util\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Patchbot\gui\RenderWidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Patchbot\gui\GameController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

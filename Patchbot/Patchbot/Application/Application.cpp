@@ -6,21 +6,28 @@
 #include "../Resources/TGA_Image.h"
 
 #include "../gui/Patchbot.h"
+#include <qpushbutton.h>
+
+struct vector {
+	vector(float x, float y)
+		:x(x), y(y) {};
+	float x, y;
+};
 
 int main(int argc, char *argv[]) {
-	MapLoader maploader;
-	try {
-		TGA_Image("res//roboter/patchbot.tga");
-	}
-	catch (const rob::Exception& e) {
-		std::cout << "";
-	}
+	QApplication app(argc, argv);
 
-	QApplication a(argc, argv);
-	Patchbot w;
-	w.show();
-	return a.exec();
+	Patchbot a;
+
+	a.show();
+
+	return app.exec();
+
 }
+
+	//actual map
+
+	//maploader.loadMap("res//maps/everything.txt");
 
 
 	//some broken maps to error-test
@@ -38,6 +45,3 @@ int main(int argc, char *argv[]) {
 	//maploader.loadMap("res//broken_too_many_chars.txt"); -works
 	//maploader.loadMap("res//broken_too_many_lines.txt"); -works
 	//maploader.loadMap("res//broken_two_starts.txt"); -works
-
-	//actual map
-	//maploader.loadMap("res//maps/everything.txt");
