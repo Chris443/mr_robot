@@ -77,9 +77,6 @@
     <ClInclude Include="Patchbot\util\Log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Patchbot\gui\RenderWidget.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Patchbot\gui\GameController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -99,6 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Patchbot\gui\Patchbot.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Patchbot\gui\RenderWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -2,6 +2,7 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_Patchbot.h"
+#include "GameController.h"
 
 class Patchbot : public QMainWindow 
 {
@@ -14,6 +15,8 @@ private:
 	Ui::PatchbotClass ui;
 
 	void resizeEvent(QResizeEvent* event);
+
+	std::shared_ptr<GameController> m_gameController;
 private slots:
 	//Colony Slots
 	void change_Colony();

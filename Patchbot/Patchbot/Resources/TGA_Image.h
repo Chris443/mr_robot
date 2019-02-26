@@ -41,7 +41,9 @@ public:
 
 	//function to copy .tga file into new .tga file to check if everything is correct
 	void copy_to_tga(const std::string& fileName);
-	const char const* get_Image() { return image_data; };
+	char* get_Image() { return image_data; };
+	inline short get_height() { return header.height; }
+	inline short get_width() { return header.width; }
 private:
 	void processHeader(std::ifstream& file);
 	void loadImageData(std::ifstream& file);

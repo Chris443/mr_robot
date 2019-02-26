@@ -20,10 +20,11 @@ TGA_Image::TGA_Image(const std::string& filepath)
 		delete[] image_data;
 		file.close();
 	}
+	file.close();
 }
 TGA_Image::~TGA_Image()
 {
-	delete[] image_data;
+		delete[] image_data;
 }
 
 void TGA_Image::processHeader(std::ifstream& file) {

@@ -24,6 +24,7 @@
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "RenderWidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -36,7 +37,7 @@ public:
     QGridLayout *gridLayout;
     QScrollBar *yScrollbar;
     QScrollBar *xScrollbar;
-    QWidget *game;
+    RenderWidget *game;
     QPushButton *changeColony;
     QLabel *label_2;
     QWidget *programmingWidget;
@@ -56,12 +57,12 @@ public:
     QLabel *programmText;
     QWidget *widget;
     QGridLayout *gridLayout_5;
-    QPushButton *singleStepButton;
     QPushButton *startButton;
     QPushButton *cancelButton;
     QPushButton *automateButton;
     QPushButton *stopButton;
     QLabel *label;
+    QPushButton *singleStepButton;
     QSpacerItem *verticalSpacer_3;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -218,7 +219,7 @@ public:
 
         gridLayout->addWidget(xScrollbar, 1, 0, 1, 1);
 
-        game = new QWidget(gameWindow);
+        game = new RenderWidget(gameWindow);
         game->setObjectName(QString::fromUtf8("game"));
         sizePolicy.setHeightForWidth(game->sizePolicy().hasHeightForWidth());
         game->setSizePolicy(sizePolicy);
@@ -837,10 +838,10 @@ public:
         gridLayout_5->setSpacing(6);
         gridLayout_5->setContentsMargins(11, 11, 11, 11);
         gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
-        singleStepButton = new QPushButton(widget);
-        singleStepButton->setObjectName(QString::fromUtf8("singleStepButton"));
-        singleStepButton->setMinimumSize(QSize(130, 40));
-        singleStepButton->setMaximumSize(QSize(16777215, 50));
+        startButton = new QPushButton(widget);
+        startButton->setObjectName(QString::fromUtf8("startButton"));
+        startButton->setMinimumSize(QSize(130, 40));
+        startButton->setMaximumSize(QSize(16777215, 50));
         QPalette palette15;
         palette15.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette15.setBrush(QPalette::Active, QPalette::Button, brush3);
@@ -881,16 +882,16 @@ public:
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette15.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush12);
 #endif
-        singleStepButton->setPalette(palette15);
-        singleStepButton->setStyleSheet(QString::fromUtf8("background-color: rgb(60, 112, 208);\n"
+        startButton->setPalette(palette15);
+        startButton->setStyleSheet(QString::fromUtf8("background-color: rgb(60, 112, 208);\n"
 "border:2px solid #000000;"));
 
-        gridLayout_5->addWidget(singleStepButton, 3, 1, 1, 1);
+        gridLayout_5->addWidget(startButton, 2, 1, 1, 1);
 
-        startButton = new QPushButton(widget);
-        startButton->setObjectName(QString::fromUtf8("startButton"));
-        startButton->setMinimumSize(QSize(130, 40));
-        startButton->setMaximumSize(QSize(16777215, 50));
+        cancelButton = new QPushButton(widget);
+        cancelButton->setObjectName(QString::fromUtf8("cancelButton"));
+        cancelButton->setMinimumSize(QSize(130, 40));
+        cancelButton->setMaximumSize(QSize(16777215, 50));
         QPalette palette16;
         palette16.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette16.setBrush(QPalette::Active, QPalette::Button, brush3);
@@ -931,16 +932,16 @@ public:
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette16.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush12);
 #endif
-        startButton->setPalette(palette16);
-        startButton->setStyleSheet(QString::fromUtf8("background-color: rgb(60, 112, 208);\n"
+        cancelButton->setPalette(palette16);
+        cancelButton->setStyleSheet(QString::fromUtf8("background-color: rgb(60, 112, 208);\n"
 "border:2px solid #000000;"));
 
-        gridLayout_5->addWidget(startButton, 2, 1, 1, 1);
+        gridLayout_5->addWidget(cancelButton, 2, 2, 1, 1);
 
-        cancelButton = new QPushButton(widget);
-        cancelButton->setObjectName(QString::fromUtf8("cancelButton"));
-        cancelButton->setMinimumSize(QSize(130, 40));
-        cancelButton->setMaximumSize(QSize(16777215, 50));
+        automateButton = new QPushButton(widget);
+        automateButton->setObjectName(QString::fromUtf8("automateButton"));
+        automateButton->setMinimumSize(QSize(130, 40));
+        automateButton->setMaximumSize(QSize(16777215, 50));
         QPalette palette17;
         palette17.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette17.setBrush(QPalette::Active, QPalette::Button, brush3);
@@ -981,16 +982,16 @@ public:
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette17.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush12);
 #endif
-        cancelButton->setPalette(palette17);
-        cancelButton->setStyleSheet(QString::fromUtf8("background-color: rgb(60, 112, 208);\n"
+        automateButton->setPalette(palette17);
+        automateButton->setStyleSheet(QString::fromUtf8("background-color: rgb(60, 112, 208);\n"
 "border:2px solid #000000;"));
 
-        gridLayout_5->addWidget(cancelButton, 2, 2, 1, 1);
+        gridLayout_5->addWidget(automateButton, 3, 2, 1, 1);
 
-        automateButton = new QPushButton(widget);
-        automateButton->setObjectName(QString::fromUtf8("automateButton"));
-        automateButton->setMinimumSize(QSize(130, 40));
-        automateButton->setMaximumSize(QSize(16777215, 50));
+        stopButton = new QPushButton(widget);
+        stopButton->setObjectName(QString::fromUtf8("stopButton"));
+        stopButton->setMinimumSize(QSize(130, 40));
+        stopButton->setMaximumSize(QSize(16777215, 50));
         QPalette palette18;
         palette18.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette18.setBrush(QPalette::Active, QPalette::Button, brush3);
@@ -1031,16 +1032,31 @@ public:
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette18.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush12);
 #endif
-        automateButton->setPalette(palette18);
-        automateButton->setStyleSheet(QString::fromUtf8("background-color: rgb(60, 112, 208);\n"
+        stopButton->setPalette(palette18);
+        stopButton->setStyleSheet(QString::fromUtf8("background-color: rgb(60, 112, 208);\n"
 "border:2px solid #000000;"));
 
-        gridLayout_5->addWidget(automateButton, 3, 2, 1, 1);
+        gridLayout_5->addWidget(stopButton, 4, 2, 1, 1);
 
-        stopButton = new QPushButton(widget);
-        stopButton->setObjectName(QString::fromUtf8("stopButton"));
-        stopButton->setMinimumSize(QSize(130, 40));
-        stopButton->setMaximumSize(QSize(16777215, 50));
+        label = new QLabel(widget);
+        label->setObjectName(QString::fromUtf8("label"));
+        QSizePolicy sizePolicy7(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+        sizePolicy7.setHorizontalStretch(0);
+        sizePolicy7.setVerticalStretch(0);
+        sizePolicy7.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
+        label->setSizePolicy(sizePolicy7);
+        label->setMinimumSize(QSize(0, 30));
+        label->setMaximumSize(QSize(16777215, 30));
+        label->setFont(font);
+        label->setAlignment(Qt::AlignCenter);
+        label->setWordWrap(false);
+
+        gridLayout_5->addWidget(label, 1, 1, 1, 2);
+
+        singleStepButton = new QPushButton(widget);
+        singleStepButton->setObjectName(QString::fromUtf8("singleStepButton"));
+        singleStepButton->setMinimumSize(QSize(130, 40));
+        singleStepButton->setMaximumSize(QSize(16777215, 50));
         QPalette palette19;
         palette19.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette19.setBrush(QPalette::Active, QPalette::Button, brush3);
@@ -1081,26 +1097,11 @@ public:
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette19.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush12);
 #endif
-        stopButton->setPalette(palette19);
-        stopButton->setStyleSheet(QString::fromUtf8("background-color: rgb(60, 112, 208);\n"
+        singleStepButton->setPalette(palette19);
+        singleStepButton->setStyleSheet(QString::fromUtf8("background-color: rgb(60, 112, 208);\n"
 "border:2px solid #000000;"));
 
-        gridLayout_5->addWidget(stopButton, 4, 2, 1, 1);
-
-        label = new QLabel(widget);
-        label->setObjectName(QString::fromUtf8("label"));
-        QSizePolicy sizePolicy7(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
-        sizePolicy7.setHorizontalStretch(0);
-        sizePolicy7.setVerticalStretch(0);
-        sizePolicy7.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
-        label->setSizePolicy(sizePolicy7);
-        label->setMinimumSize(QSize(0, 30));
-        label->setMaximumSize(QSize(16777215, 30));
-        label->setFont(font);
-        label->setAlignment(Qt::AlignCenter);
-        label->setWordWrap(false);
-
-        gridLayout_5->addWidget(label, 1, 1, 1, 2);
+        gridLayout_5->addWidget(singleStepButton, 3, 1, 1, 1);
 
 
         gridLayout_3->addWidget(widget, 4, 2, 1, 1);
@@ -1135,12 +1136,12 @@ public:
         waitButton->setText(QString());
         upButton->setText(QString());
         programmText->setText(QApplication::translate("PatchbotClass", "Programmieren", nullptr));
-        singleStepButton->setText(QApplication::translate("PatchbotClass", "Einzelschritt", nullptr));
         startButton->setText(QApplication::translate("PatchbotClass", "Start", nullptr));
         cancelButton->setText(QApplication::translate("PatchbotClass", "Abbruch", nullptr));
         automateButton->setText(QApplication::translate("PatchbotClass", "Automatik", nullptr));
         stopButton->setText(QApplication::translate("PatchbotClass", "Anhalten", nullptr));
         label->setText(QApplication::translate("PatchbotClass", "Missionsablauf", nullptr));
+        singleStepButton->setText(QApplication::translate("PatchbotClass", "Einzelschritt", nullptr));
     } // retranslateUi
 
 };

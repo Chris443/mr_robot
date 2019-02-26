@@ -3,7 +3,8 @@
 #include <QResizeEvent>
 
 Patchbot::Patchbot(QWidget *parent)
-	: QMainWindow(parent)
+	: QMainWindow(parent),
+	m_gameController(std::make_shared<GameController>())
 {
 	ui.setupUi(this);
 	//ui.leftButton->resize();
@@ -26,6 +27,8 @@ Patchbot::Patchbot(QWidget *parent)
 	connect(ui.singleStepButton, SIGNAL(pressed()), this, SLOT(single_step()));
 	connect(ui.automateButton, SIGNAL(pressed()), this, SLOT(automate()));
 	connect(ui.stopButton, SIGNAL(pressed()), this, SLOT(stop()));
+
+	ui.game->set_Controller(m_gameController);
 
 	//this->resizeEvent
 
