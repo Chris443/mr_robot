@@ -10,7 +10,7 @@ Todo:
 -Pathfinding, Dijkstra
 -Enemy AI
 
-Done:
+Done: \n
 -Map-Loader
 -self-written TGA-Loader
 -Qt-Gui 
