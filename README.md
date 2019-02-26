@@ -3,14 +3,14 @@ I'm doing this beside uni stuff just to learn Qt and get some practice before im
 First time i did exception handling, so this part might be really ugly.
 
 Currently working on:
-Model View Presenter & Map Culling (Not using QtGraphicsView)
+Model View Presenter & Map Culling (NO use of QtGraphicsView)
 
-Todo:
+Todo:  
 -Gui Interaction (Signal/Slot)
 -Pathfinding, Dijkstra
 -Enemy AI
 
-Done: \n
+Done: 
 -Map-Loader
 -self-written TGA-Loader
 -Qt-Gui 
