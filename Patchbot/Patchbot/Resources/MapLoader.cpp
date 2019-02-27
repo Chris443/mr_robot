@@ -12,7 +12,7 @@ int MapLoader::m_height(0);
 int MapLoader::m_starts(0);
 int MapLoader::m_goals(0);
 
-Tilemap& MapLoader::loadMap(const std::string& filepath) {
+Tilemap MapLoader::loadMap(const std::string& filepath) {
 	Tilemap tilemap;
 
 	std::ifstream file(filepath);
@@ -50,9 +50,6 @@ Tilemap& MapLoader::loadMap(const std::string& filepath) {
 	}
 
 
-
-	printTilemap(tilemap);
-
 	try {
 		file.close();
 	}
@@ -60,7 +57,7 @@ Tilemap& MapLoader::loadMap(const std::string& filepath) {
 		//couldnt close file
 	}
 
-	return tilemap;
+	return std::move(tilemap);
 }
 
 void MapLoader::processLine(std::vector<Tile>& tile_row, char sign) {

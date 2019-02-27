@@ -8,6 +8,7 @@
 #include "../gui/Patchbot.h"
 #include <qpushbutton.h>
 
+
 struct vector {
 	vector(float x, float y)
 		:x(x), y(y) {};
@@ -22,7 +23,6 @@ int main(int argc, char *argv[]) {
 	a.show();
 
 	return app.exec();
-
 }
 
 	//actual map

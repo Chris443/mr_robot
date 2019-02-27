@@ -7,11 +7,13 @@ Patchbot::Patchbot(QWidget *parent)
 	m_gameController(std::make_shared<GameController>())
 {
 	ui.setupUi(this);
-	//ui.leftButton->resize();
 	this->setWindowTitle("PatchBot 1.0V");
 
+	//scrollbars
+	connect(ui.xScrollbar, SIGNAL(valueChanged(int)), this, SLOT(xScrollbarMoved(int)));
+	connect(ui.yScrollbar, SIGNAL(valueChanged(int)), this, SLOT(yScrollbarMoved(int)));
 	//Colony connect
-	//connect(ui.leftButton, SIGNAL(pressed()), this, SLOT(left_Arrow_clicked()));
+
 	//Programming connect
 	connect(ui.leftButton, SIGNAL(pressed()),this, SLOT(left_Arrow_clicked()));
 	connect(ui.rightButton, SIGNAL(pressed()), this, SLOT(right_Arrow_clicked()));
@@ -30,30 +32,22 @@ Patchbot::Patchbot(QWidget *parent)
 
 	ui.game->set_Controller(m_gameController);
 
-	//this->resizeEvent
-
 	this->setMinimumSize(1057, 580);
-	//ui.scrollArea->
 }
 
 void Patchbot::resizeEvent(QResizeEvent* event) {
-	QMainWindow::resizeEvent(event);
-	//ui.scrollArea->resizeEvent(event);
+	m_gameController->updateRenderWidgetHeight(ui.game->height());
+	m_gameController->updateRenderWidgetWidth(ui.game->width());
+}
 
-	QSize oldSize = event->oldSize();
-	QSize newSize = event->size();
-
-	//ui.ProgrammierBox->sizeHint();
-	int wMultiplikator = oldSize.width()/newSize.width();
-	int hMultiplikator = oldSize.height() / newSize.height();
-	//ui.ProgrammierBox->resize(ui.ProgrammierBox->width() * wMultiplikator, ui.ProgrammierBox->height()*hMultiplikator);
-	/*
-	ui.scrollArea->resize(ui.scrollArea->width() * wMultiplikator, ui.scrollArea->height() * hMultiplikator);
-	ui.horizontalScrollBar->resize(ui.horizontalScrollBar->width() * wMultiplikator,ui.horizontalScrollBar->height());*/
-	//ui.scrollbar
+void Patchbot::paintEvent(QPaintEvent *event) {
+	//@TODO: first frame is wrong, change somehow here 
+	m_gameController->updateRenderWidgetHeight(ui.game->height());
+	m_gameController->updateRenderWidgetWidth(ui.game->width());
 }
 
 void Patchbot::left_Arrow_clicked() {
+
 
 }
 
@@ -102,4 +96,12 @@ void Patchbot::automate() {
 }
 void Patchbot::stop() {
 
+}
+void Patchbot::xScrollbarMoved(int val) {
+	m_gameController->updateXScrollbar(val);
+	ui.game->update();
+}
+void Patchbot::yScrollbarMoved(int val) {
+	m_gameController->updateYScrollbar(val);
+	ui.game->update();
 }

@@ -71,7 +71,7 @@ public:
     {
         if (PatchbotClass->objectName().isEmpty())
             PatchbotClass->setObjectName(QString::fromUtf8("PatchbotClass"));
-        PatchbotClass->resize(800, 676);
+        PatchbotClass->resize(874, 688);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -134,6 +134,8 @@ public:
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(yScrollbar->sizePolicy().hasHeightForWidth());
         yScrollbar->setSizePolicy(sizePolicy2);
+        yScrollbar->setMouseTracking(false);
+        yScrollbar->setTabletTracking(false);
         yScrollbar->setOrientation(Qt::Vertical);
 
         gridLayout->addWidget(yScrollbar, 0, 1, 1, 1);
@@ -214,6 +216,8 @@ public:
         palette3.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush9);
 #endif
         xScrollbar->setPalette(palette3);
+        xScrollbar->setMouseTracking(false);
+        xScrollbar->setTabletTracking(false);
         xScrollbar->setStyleSheet(QString::fromUtf8("color: rgb(60, 112, 208);"));
         xScrollbar->setOrientation(Qt::Horizontal);
 

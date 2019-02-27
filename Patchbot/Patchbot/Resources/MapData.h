@@ -32,6 +32,11 @@ enum Enemy_Type {
 	NONE
 };
 
+enum Player_Textures {
+	PATCHBOT_TEXTURE,
+	DEAD_TEXTURE
+};
+
 
 
 const std::map<char, Tile_Type> mapped_data = {

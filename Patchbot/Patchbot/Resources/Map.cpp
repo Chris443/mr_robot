@@ -1,9 +1,9 @@
 #include "Map.h"
 
 
-
-Map::Map()
+Map::Map(const std::string& file)
 {
+	map = MapLoader::loadMap(file);
 }
 
 

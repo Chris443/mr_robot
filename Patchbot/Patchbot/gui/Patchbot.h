@@ -16,8 +16,12 @@ private:
 
 	void resizeEvent(QResizeEvent* event);
 
+	void paintEvent(QPaintEvent *event);
 	std::shared_ptr<GameController> m_gameController;
 private slots:
+	//scrollbars
+	void xScrollbarMoved(int val);
+	void yScrollbarMoved(int val);
 	//Colony Slots
 	void change_Colony();
 	//Programming Slots
@@ -35,4 +39,5 @@ private slots:
 	void single_step();
 	void automate();
 	void stop();
+
 };

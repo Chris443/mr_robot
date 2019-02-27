@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>676</height>
+    <width>874</width>
+    <height>688</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -217,6 +217,12 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="mouseTracking">
+          <bool>false</bool>
+         </property>
+         <property name="tabletTracking">
+          <bool>false</bool>
          </property>
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -678,6 +684,12 @@
             </colorrole>
            </disabled>
           </palette>
+         </property>
+         <property name="mouseTracking">
+          <bool>false</bool>
+         </property>
+         <property name="tabletTracking">
+          <bool>false</bool>
          </property>
          <property name="styleSheet">
           <string notr="true">color: rgb(60, 112, 208);</string>
