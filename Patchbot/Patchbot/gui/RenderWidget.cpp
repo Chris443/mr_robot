@@ -22,6 +22,7 @@ void RenderWidget::paintEvent(QPaintEvent *event) {
 	auto map = m_gameController->getMap();
 
 	auto ground_textures = m_gameController->get_Ground_Textures();
+	auto robot_textures = m_gameController->get_Robot_Textures();
 	QPainter p(this);
 
 	//values for culling
@@ -32,7 +33,7 @@ void RenderWidget::paintEvent(QPaintEvent *event) {
 	ymin_render_pos = (ymin_render_pos / 100) * (map->getMap().size());	
 
 	int xmax = m_gameController->getRenderWidghetWidth();
-	xmax = xmax / tileSize;
+	xmax = xmax / tileSize ;
 	int ymax = m_gameController->getRenderWidgetHeight();
 	ymax = ymax / tileSize;
 
@@ -53,6 +54,12 @@ void RenderWidget::paintEvent(QPaintEvent *event) {
 			/*
 			render robots
 			*/
+			if (map->getMap()[y][x].m_robot_type != Robot_Type::NONE) {
+				//Enemy is on Tile, so render it
+
+				auto rob_tex = robot_textures.find(map->getMap()[y][x].m_robot_type);
+				p.drawImage(QPoint(xr*tileSize, yr*tileSize), *rob_tex->second);
+			}
 
 
 			xr++;

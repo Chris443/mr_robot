@@ -1,1 +1,2 @@
-ERROR::TGA_LOADER::FILE_LOADING
+ERROR::MAP_LOADING::WRONG_WIDTH
+Fatal Error - Map Loading - Calling Abort()

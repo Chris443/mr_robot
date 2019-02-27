@@ -64,19 +64,23 @@ void MapLoader::processLine(std::vector<Tile>& tile_row, char sign) {
 	if (!isdigit(sign)) {
 		auto iterator = mapped_data.find(sign);
 
-		if (sign == 'p')
+		if (sign == 'p') {
 			++m_starts;
-		if (sign == 'P')
+			tile_row.push_back(Tile({ iterator->second,Robot_Type::PATCHBOT }));
+		}
+		else if (sign == 'P') {
 			++m_goals;
-
-		if (iterator == mapped_data.end()) {
+			tile_row.push_back(Tile({ iterator->second,Robot_Type::NONE }));
+		}
+		else if (iterator == mapped_data.end()) {
 			throw rob::Exception(rob::ERROR_TYPE::UNSUPPORTED_TYPE);
 		}
-
-		tile_row.push_back(Tile({ iterator->second,Enemy_Type::NONE }));
+		else {
+			tile_row.push_back(Tile({ iterator->second,Robot_Type::NONE }));
+		}
 	}
 	else if (sign < 56 && sign >48) { // ascii 1-7
-		tile_row.push_back(Tile({ Tile_Type::ENEMY_START_TILE, static_cast<Enemy_Type>(sign - 48) }));
+		tile_row.push_back(Tile({ Tile_Type::ENEMY_START_TILE, static_cast<Robot_Type>(sign - 48) }));
 
 	}
 	else {
@@ -114,7 +118,7 @@ void MapLoader::printTilemap(const Tilemap& tilemap) {
 		for (int j = 0; j < tilemap[i].size(); ++j) {
 			int a = tilemap[i][j].m_tileType;
 			if (a == 12)
-				std::cout << tilemap[i][j].m_enemy_type;
+				std::cout << tilemap[i][j].m_robot_type;
 			else
 				std::cout << testType[a];
 		}

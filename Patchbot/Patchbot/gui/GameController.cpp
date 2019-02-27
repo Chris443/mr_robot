@@ -100,46 +100,46 @@ void GameController::load_textures() {
 	tga = std::make_shared<TGA_Image>(rob_basePath + "typ1_bugger.tga");
 	tex = reinterpret_cast<unsigned char*>(tga->get_Image());
 	tmp = QImage(tex, tga->get_width(), tga->get_height(), QImage::Format_ARGB32);
-	enemy_textures.insert(std::make_pair(Enemy_Type::BUGGER, std::make_shared<QImage>(tmp.mirrored())));
+	robot_textures.insert(std::make_pair(Robot_Type::BUGGER, std::make_shared<QImage>(tmp.mirrored())));
 
 	tga = std::make_shared<TGA_Image>(rob_basePath + "typ2_pusher.tga");
 	tex = reinterpret_cast<unsigned char*>(tga->get_Image());
 	tmp = QImage(tex, tga->get_width(), tga->get_height(), QImage::Format_ARGB32);
-	enemy_textures.insert(std::make_pair(Enemy_Type::PUSHER, std::make_shared<QImage>(tmp.mirrored())));
+	robot_textures.insert(std::make_pair(Robot_Type::PUSHER, std::make_shared<QImage>(tmp.mirrored())));
 
 	tga = std::make_shared<TGA_Image>(rob_basePath + "typ3_digger.tga");
 	tex = reinterpret_cast<unsigned char*>(tga->get_Image());
 	tmp = QImage(tex, tga->get_width(), tga->get_height(), QImage::Format_ARGB32);
-	enemy_textures.insert(std::make_pair(Enemy_Type::DIGGER, std::make_shared<QImage>(tmp.mirrored())));
+	robot_textures.insert(std::make_pair(Robot_Type::DIGGER, std::make_shared<QImage>(tmp.mirrored())));
 
 	tga = std::make_shared<TGA_Image>(rob_basePath + "typ4_swimmer.tga");
 	tex = reinterpret_cast<unsigned char*>(tga->get_Image());
 	tmp = QImage(tex, tga->get_width(), tga->get_height(), QImage::Format_ARGB32);
-	enemy_textures.insert(std::make_pair(Enemy_Type::SWIMMER, std::make_shared<QImage>(tmp.mirrored())));
+	robot_textures.insert(std::make_pair(Robot_Type::SWIMMER, std::make_shared<QImage>(tmp.mirrored())));
 
 	tga = std::make_shared<TGA_Image>(rob_basePath + "typ5_follower.tga");
 	tex = reinterpret_cast<unsigned char*>(tga->get_Image());
 	tmp = QImage(tex, tga->get_width(), tga->get_height(), QImage::Format_ARGB32);
-	enemy_textures.insert(std::make_pair(Enemy_Type::FOLLOWER, std::make_shared<QImage>(tmp.mirrored())));
+	robot_textures.insert(std::make_pair(Robot_Type::FOLLOWER, std::make_shared<QImage>(tmp.mirrored())));
 
 	tga = std::make_shared<TGA_Image>(rob_basePath + "typ6_hunter.tga");
 	tex = reinterpret_cast<unsigned char*>(tga->get_Image());
 	tmp = QImage(tex, tga->get_width(), tga->get_height(), QImage::Format_ARGB32);
-	enemy_textures.insert(std::make_pair(Enemy_Type::HUNTER, std::make_shared<QImage>(tmp.mirrored())));
+	robot_textures.insert(std::make_pair(Robot_Type::HUNTER, std::make_shared<QImage>(tmp.mirrored())));
 
 	tga = std::make_shared<TGA_Image>(rob_basePath + "typ7_sniffer.tga");
 	tex = reinterpret_cast<unsigned char*>(tga->get_Image());
 	tmp = QImage(tex, tga->get_width(), tga->get_height(), QImage::Format_ARGB32);
-	enemy_textures.insert(std::make_pair(Enemy_Type::SNIFFER, std::make_shared<QImage>(tmp.mirrored())));
+	robot_textures.insert(std::make_pair(Robot_Type::SNIFFER, std::make_shared<QImage>(tmp.mirrored())));
 	//patchbot textures
 	tga = std::make_shared<TGA_Image>(rob_basePath + "dead.tga");
 	tex = reinterpret_cast<unsigned char*>(tga->get_Image());
 	tmp = QImage(tex, tga->get_width(), tga->get_height(), QImage::Format_ARGB32);
-	player_textures.insert(std::make_pair(Player_Textures::DEAD_TEXTURE, std::make_shared<QImage>(tmp.mirrored())));
+	robot_textures.insert(std::make_pair(Robot_Type::DEAD_ROBOT, std::make_shared<QImage>(tmp.mirrored())));
 
 	tga = std::make_shared<TGA_Image>(rob_basePath + "patchbot.tga");
 	tex = reinterpret_cast<unsigned char*>(tga->get_Image());
 	tmp = QImage(tex, tga->get_width(), tga->get_height(), QImage::Format_ARGB32);
-	player_textures.insert(std::make_pair(Player_Textures::PATCHBOT_TEXTURE, std::make_shared<QImage>(tmp.mirrored())));
+	robot_textures.insert(std::make_pair(Robot_Type::PATCHBOT, std::make_shared<QImage>(tmp.mirrored())));
 }
 

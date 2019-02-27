@@ -8,7 +8,7 @@
 
 struct Tile {
 	Tile_Type m_tileType;
-	Enemy_Type m_enemy_type; // NONE, for no Enemy
+	Robot_Type m_robot_type; // NONE, for no Enemy
 };
 //single vector wih x + y*width mapping would be better, but for this project this is sufficiet(and well, i didnt think about it when implementing the loader)
 using Tilemap = std::vector<std::vector<Tile>>;

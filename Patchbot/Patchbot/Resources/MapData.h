@@ -21,7 +21,7 @@ enum Tile_Type {
 	OPEN_AUTOMATIC_DOOR
 };
 
-enum Enemy_Type {
+enum Robot_Type {
 	BUGGER = 1,
 	PUSHER,
 	DIGGER,
@@ -29,12 +29,9 @@ enum Enemy_Type {
 	FOLLOWER,
 	HUNTER,
 	SNIFFER,
+	PATCHBOT,
+	DEAD_ROBOT,
 	NONE
-};
-
-enum Player_Textures {
-	PATCHBOT_TEXTURE,
-	DEAD_TEXTURE
 };
 
 

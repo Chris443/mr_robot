@@ -17,8 +17,7 @@ public:
 	~GameController();
 
 	std::map<Tile_Type, std::shared_ptr<QImage>>& get_Ground_Textures() {return ground_textures;};
-	std::map<Enemy_Type, std::shared_ptr<QImage>>& get_Enemy_Textures() { return enemy_textures; };
-	std::map<Player_Textures, std::shared_ptr<QImage>>& get_Player_Textures() { return player_textures; };
+	std::map<Robot_Type, std::shared_ptr<QImage>>& get_Robot_Textures() { return robot_textures; };
 
 	std::shared_ptr<Map> getMap() { return map; }
 
@@ -41,9 +40,8 @@ private:
 	//environment textures
 	std::map<Tile_Type,std::shared_ptr<QImage>> ground_textures;
 	//enemy Textures
-	std::map<Enemy_Type,std::shared_ptr<QImage>> enemy_textures;
-	//player as special entity
-	std::map<Player_Textures, std::shared_ptr<QImage>> player_textures;
+	std::map<Robot_Type,std::shared_ptr<QImage>> robot_textures;
+
 
 	int xScrollbar;
 	int yScrollbar;
