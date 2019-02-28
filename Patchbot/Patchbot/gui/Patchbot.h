@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
+#include <qtimer.h>
 #include "ui_Patchbot.h"
 #include "GameController.h"
 
@@ -18,6 +19,7 @@ private:
 
 	void paintEvent(QPaintEvent *event);
 	std::shared_ptr<GameController> m_gameController;
+	std::shared_ptr<QTimer> m_timer;
 private slots:
 	//scrollbars
 	void xScrollbarMoved(int val);
@@ -39,5 +41,7 @@ private slots:
 	void single_step();
 	void automate();
 	void stop();
+
+	void automate_update();
 
 };

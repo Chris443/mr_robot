@@ -37,6 +37,8 @@ public:
 	std::string& getProgrammCommands() { return programmCommands; }
 	void deleteProgrammCommand();
 	void singleStep();
+
+	void reset();
 private:
 	void load_textures();
 

@@ -8,6 +8,12 @@ Patchbot::Patchbot(QWidget *parent)
 {
 	ui.setupUi(this);
 	this->setWindowTitle("PatchBot 1.0V");
+	ui.singleStepButton->setDisabled(true);
+	ui.automateButton->setDisabled(true);
+	ui.cancelButton->setDisabled(true);
+	ui.stopButton->setDisabled(true);
+
+	m_timer = std::make_shared<QTimer>();
 	
 	for (int i = 1; i < 5; ++i) {
 		ui.repetitionBox->insertItem(i, QString::number(i) + "x");
@@ -32,6 +38,7 @@ Patchbot::Patchbot(QWidget *parent)
 	connect(ui.singleStepButton, SIGNAL(pressed()), this, SLOT(single_step()));
 	connect(ui.automateButton, SIGNAL(pressed()), this, SLOT(automate()));
 	connect(ui.stopButton, SIGNAL(pressed()), this, SLOT(stop()));
+	connect(m_timer.get(), SIGNAL(timeout()),	this, SLOT(automate_update()));
 
 	ui.game->set_Controller(m_gameController);
 
@@ -92,11 +99,21 @@ void Patchbot::textfield() {
 }
 
 void Patchbot::mission_start() {
-	//ui.
-
+	ui.singleStepButton->setDisabled(false);
+	ui.automateButton->setDisabled(false);
+	ui.cancelButton->setDisabled(false);
+	ui.startButton->setDisabled(true);
 }
 void Patchbot::cancel() {
+	ui.singleStepButton->setDisabled(true);
+	ui.automateButton->setDisabled(true);
+	ui.cancelButton->setDisabled(true);
+	ui.startButton->setDisabled(false);
+	ui.stopButton->setDisabled(true);
+	//reload/restart game
 
+	m_gameController->reset();
+	ui.game->update();
 }
 void Patchbot::single_step() {
 	m_gameController->singleStep();
@@ -104,10 +121,22 @@ void Patchbot::single_step() {
 	ui.game->update();
 }
 void Patchbot::automate() {
+	ui.automateButton->setDisabled(true);
+	ui.singleStepButton->setDisabled(true);
+	ui.stopButton->setDisabled(false);
 
+	m_timer->start(1000);
 }
-void Patchbot::stop() {
 
+void Patchbot::automate_update() {
+	single_step();
+}
+
+void Patchbot::stop() {
+	ui.automateButton->setDisabled(false);
+	ui.singleStepButton->setDisabled(false);
+	ui.stopButton->setDisabled(true);
+	m_timer->stop();
 }
 void Patchbot::xScrollbarMoved(int val) {
 	m_gameController->updateXScrollbar(val);

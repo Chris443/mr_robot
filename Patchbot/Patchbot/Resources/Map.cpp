@@ -3,6 +3,7 @@
 
 Map::Map(const std::string& file)
 {
+	currentMap = file;
 	map = MapLoader::loadMap(file);
 
 	init_robot_positions();
@@ -14,6 +15,11 @@ Map::~Map()
 {
 }
 
+void Map::resetColony() {
+	map = MapLoader::loadMap(currentMap);
+
+	init_robot_positions();
+}
 
 void Map::init_robot_positions() {
 	//@TODO Türen Speichern

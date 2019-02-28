@@ -17,8 +17,11 @@ public:
 
 	std::shared_ptr<Player> get_Player() { return player; }
 	void update_Patchbot(int x,int y);
+
+	void resetColony();
 private:
 	Tilemap map;
+	std::string currentMap;
 
 	std::shared_ptr<Player> player;
 	//std::vector<Robot_Type> robots;

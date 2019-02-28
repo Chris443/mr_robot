@@ -179,3 +179,8 @@ void GameController::singleStep() {
 	map->update_Patchbot(xpos,ypos);
 }
 
+void GameController::reset() {
+	map->resetColony();
+	xScrollbar = 0;
+	yScrollbar = 0;
+}

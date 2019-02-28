@@ -13,6 +13,10 @@ int MapLoader::m_starts(0);
 int MapLoader::m_goals(0);
 
 Tilemap MapLoader::loadMap(const std::string& filepath) {
+	MapLoader::m_width = 0;
+	MapLoader::m_height = 0;
+	MapLoader::m_starts  =0;
+	MapLoader::m_goals = 0;
 	Tilemap tilemap;
 
 	std::ifstream file(filepath);
