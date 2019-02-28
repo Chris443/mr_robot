@@ -351,7 +351,7 @@ public:
         repetitionBox->setPalette(palette5);
         repetitionBox->setStyleSheet(QString::fromUtf8("background-color: rgb(60, 112, 208);\n"
 "border:2px solid #000000;"));
-        repetitionBox->setEditable(true);
+        repetitionBox->setEditable(false);
 
         gridLayout_4->addWidget(repetitionBox, 2, 5, 1, 1);
 
@@ -743,10 +743,11 @@ public:
 #endif
         programLine->setPalette(palette12);
         QFont font1;
-        font1.setUnderline(true);
+        font1.setUnderline(false);
         programLine->setFont(font1);
         programLine->setStyleSheet(QString::fromUtf8("background-color: rgb(60, 112, 208);\n"
 "border:2px solid #000000;"));
+        programLine->setReadOnly(true);
 
         currentProgramLayout->addWidget(programLine);
 
@@ -1132,7 +1133,7 @@ public:
         PatchbotClass->setWindowTitle(QApplication::translate("PatchbotClass", "Patchbot", nullptr));
         changeColony->setText(QApplication::translate("PatchbotClass", "Andere Kolonie...", nullptr));
         label_2->setText(QApplication::translate("PatchbotClass", "Aktuelle Kolonie:", nullptr));
-        repetitionBox->setCurrentText(QApplication::translate("PatchbotClass", "1x", nullptr));
+        repetitionBox->setCurrentText(QString());
         leftButton->setText(QString());
         downButton->setText(QString());
         rightButton->setText(QString());

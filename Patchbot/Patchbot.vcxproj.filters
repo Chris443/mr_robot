@@ -57,6 +57,9 @@
     <ClCompile Include="Patchbot\gui\GameController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Patchbot\Robots\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Patchbot\Resources\Map.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Patchbot\gui\GameController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Patchbot\Robots\Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

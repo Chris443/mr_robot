@@ -32,6 +32,11 @@ public:
 
 	int getRenderWidghetWidth() { return renderWidgetWidth; }
 	int getRenderWidgetHeight() { return renderWidgetHeight; }
+
+	void appendProgrammCommand(std::string s) { programmCommands.append(s); }
+	std::string& getProgrammCommands() { return programmCommands; }
+	void deleteProgrammCommand();
+	void singleStep();
 private:
 	void load_textures();
 
@@ -47,6 +52,8 @@ private:
 	int yScrollbar;
 	int renderWidgetWidth;
 	int renderWidgetHeight;
+
+	std::string programmCommands;
 };
 
 #endif

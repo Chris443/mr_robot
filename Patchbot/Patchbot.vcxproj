@@ -20,8 +20,10 @@
     <ClCompile Include="Patchbot\util\Exception.cpp" />
     <ClCompile Include="Patchbot\util\Log.cpp" />
     <ClCompile Include="Patchbot\gui\RenderWidget.cpp" />
+    <ClCompile Include="Patchbot\Robots\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Patchbot\Robots\Player.h" />
     <QtMoc Include="Patchbot\gui\RenderWidget.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>

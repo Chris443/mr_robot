@@ -143,3 +143,39 @@ void GameController::load_textures() {
 	robot_textures.insert(std::make_pair(Robot_Type::PATCHBOT, std::make_shared<QImage>(tmp.mirrored())));
 }
 
+void GameController::deleteProgrammCommand() {
+	if (programmCommands.size() > 0) {
+		programmCommands.erase(programmCommands.size() - 2, 2);
+	}
+}
+
+void GameController::singleStep() {
+	if (programmCommands.size() == 0)
+		return;
+	char command = programmCommands[0];
+	int cmdCounter = static_cast<int>(programmCommands[1]) - 48;
+
+	if (cmdCounter == 1)
+		programmCommands.erase(0, 2);
+	else {
+		programmCommands[1] = cmdCounter + 47;
+	}
+	//Note: dont update player by map->get_player->setpos, only with update-pb
+	int xpos = map->get_Player()->get_xPos();
+	int ypos = map->get_Player()->get_yPos();
+	//execute 
+	switch (command) {
+	case 'R':  xpos += 1;
+		break;				   
+	case 'L':  xpos -= 1;
+		break; 			
+	case 'U':  ypos -= 1;
+		break; 			
+	case 'D':  ypos += 1;
+		break;
+	case 'W': break;
+	}
+
+	map->update_Patchbot(xpos,ypos);
+}
+

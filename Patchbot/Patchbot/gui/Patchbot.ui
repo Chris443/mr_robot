@@ -1269,10 +1269,10 @@ border:1px solid #000000;</string>
 border:2px solid #000000;</string>
          </property>
          <property name="editable">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="currentText">
-          <string>1x</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -3679,12 +3679,15 @@ border:2px solid #000000;</string>
            </property>
            <property name="font">
             <font>
-             <underline>true</underline>
+             <underline>false</underline>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">background-color: rgb(60, 112, 208);
 border:2px solid #000000;</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
            </property>
           </widget>
          </item>

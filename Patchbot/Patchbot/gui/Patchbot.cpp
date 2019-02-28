@@ -8,7 +8,10 @@ Patchbot::Patchbot(QWidget *parent)
 {
 	ui.setupUi(this);
 	this->setWindowTitle("PatchBot 1.0V");
-
+	
+	for (int i = 1; i < 5; ++i) {
+		ui.repetitionBox->insertItem(i, QString::number(i) + "x");
+	}
 	//scrollbars
 	connect(ui.xScrollbar, SIGNAL(valueChanged(int)), this, SLOT(xScrollbarMoved(int)));
 	connect(ui.yScrollbar, SIGNAL(valueChanged(int)), this, SLOT(yScrollbarMoved(int)));
@@ -47,28 +50,33 @@ void Patchbot::paintEvent(QPaintEvent *event) {
 }
 
 void Patchbot::left_Arrow_clicked() {
-
-
+	m_gameController->appendProgrammCommand("L" + std::to_string(ui.repetitionBox->currentIndex()+1));
+	ui.programLine->setText(m_gameController->getProgrammCommands().c_str());
 }
 
 void Patchbot::right_Arrow_clicked() {
-
+	m_gameController->appendProgrammCommand("R" + std::to_string(ui.repetitionBox->currentIndex() + 1));
+	ui.programLine->setText(m_gameController->getProgrammCommands().c_str());
 }
 
 void Patchbot::down_Arrow_clicked() {
-
+	m_gameController->appendProgrammCommand("D" + std::to_string(ui.repetitionBox->currentIndex() + 1));
+	ui.programLine->setText(m_gameController->getProgrammCommands().c_str());
 }
 
 void Patchbot::up_Arrow_clicked() {
-
+	m_gameController->appendProgrammCommand("U" + std::to_string(ui.repetitionBox->currentIndex() + 1));
+	ui.programLine->setText(m_gameController->getProgrammCommands().c_str());
 }
 
 void Patchbot::wait_Arrow_clicked() {
-
+	m_gameController->appendProgrammCommand("W" + std::to_string(ui.repetitionBox->currentIndex() + 1));
+	ui.programLine->setText(m_gameController->getProgrammCommands().c_str());
 }
 
 void Patchbot::return_Arrow_clicked() {
-
+	m_gameController->deleteProgrammCommand();
+	ui.programLine->setText(m_gameController->getProgrammCommands().c_str());
 }
 
 void Patchbot::change_Colony() {
@@ -80,16 +88,20 @@ void Patchbot::dropdown() {
 }
 void Patchbot::textfield() {
 
+	//m_gameController->
 }
 
 void Patchbot::mission_start() {
+	//ui.
 
 }
 void Patchbot::cancel() {
 
 }
 void Patchbot::single_step() {
-
+	m_gameController->singleStep();
+	ui.programLine->setText(m_gameController->getProgrammCommands().c_str());
+	ui.game->update();
 }
 void Patchbot::automate() {
 
