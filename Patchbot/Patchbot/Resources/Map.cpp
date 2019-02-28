@@ -29,20 +29,24 @@ void Map::init_robot_positions() {
 
 void Map::update_Patchbot(int x,int y) {
 
-	//case Tile_Type::ALIEN_GRAS:
 
-
+	bool blocked = player->is_blocked();
 	auto next_tile = map[y][x].m_tileType;
-	/*switch (next_tile) {
+	if (blocked) {
+		player->set_blocked(false);
+		return;
+	}
+
+	switch (next_tile) {
+	case Tile_Type::ALIEN_GRAS: player->set_blocked(true); break;
 	case Tile_Type::ABYSS_TILE: //Die + game over
 	case Tile_Type::WATER_TILE: //Die + game over
-	case Tile_Type::CONCRETE_WALL:
-	case Tile_Type::ROCK_TILE:
-	default:*/
+	case Tile_Type::CONCRETE_WALL: return;
+	case Tile_Type::ROCK_TILE: return;
+	}
 		map[player->get_yPos()][player->get_xPos()].m_robot_type = Robot_Type::NONE;
 		map[y][x].m_robot_type = Robot_Type::PATCHBOT;
 		player->set_Pos(x, y);
-	//}
 }
 
 /*
