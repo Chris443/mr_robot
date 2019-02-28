@@ -181,6 +181,5 @@ void GameController::singleStep() {
 
 void GameController::reset() {
 	map->resetColony();
-	xScrollbar = 0;
-	yScrollbar = 0;
+	programmCommands.clear();
 }

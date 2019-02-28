@@ -112,7 +112,9 @@ void Patchbot::cancel() {
 	ui.stopButton->setDisabled(true);
 	//reload/restart game
 
+	m_timer->stop();
 	m_gameController->reset();
+	ui.programLine->clear();
 	ui.game->update();
 }
 void Patchbot::single_step() {
