@@ -11,5 +11,5 @@ Done:
 -Map-Loader   
 -self-written TGA-Loader  
 -Qt-Gui   
--Model View Presenter & Map Culling (without use of qtGraphicsView)
-Gui Interaction, Rendering Robots are missing
+-Model View Presenter & Map Culling (without use of qtGraphicsView)  
+-Gui Interaction, Rendering Robots are missing
