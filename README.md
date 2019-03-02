@@ -2,10 +2,9 @@ Small Project to learn Qt and get some practice before implementing my own openg
 First time i did exception handling, so this part might be really ugly.  
 
 Currently working on:   
-Gui Interaction, Rendering Robots are missing
+-Pathfinding with Dijkstra  
 
 Todo:   
--Pathfinding, Dijkstra  
 -Enemy AI  
 
 Done:   
@@ -13,3 +12,4 @@ Done:
 -self-written TGA-Loader  
 -Qt-Gui   
 -Model View Presenter & Map Culling (without use of qtGraphicsView)
+Gui Interaction, Rendering Robots are missing
