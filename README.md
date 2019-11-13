@@ -1,11 +1,11 @@
 Small Project to learn Qt and get some practice.  
 
 Currently working on:   
--Pathfinding with Dijkstra  
+Well,nothing ^^
 
 Todo:   
 -Enemy AI  
-
+-Pathfinding with Dijkstra  
 Done:   
 -Map-Loader   
 -TGA-Loader  
