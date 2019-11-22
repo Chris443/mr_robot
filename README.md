@@ -1,8 +1,5 @@
 Small Project to learn Qt and get some practice.  
 
-Currently working on:   
-Well,nothing ^^
-
 Todo:   
 -Enemy AI  
 -Pathfinding with Dijkstra  
