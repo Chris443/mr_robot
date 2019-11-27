@@ -1,4 +1,3 @@
-Small Project to learn Qt and get some practice.  
 
 Todo:   
 -Enemy AI  
