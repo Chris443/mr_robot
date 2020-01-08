@@ -1,8 +1,4 @@
 
-Todo:   
--Enemy AI  
--Pathfinding with Dijkstra  
-Done:   
 -Map-Loader   
 -TGA-Loader  
 -Qt-Gui   
